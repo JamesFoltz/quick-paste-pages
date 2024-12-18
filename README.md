@@ -13,7 +13,7 @@ data:text/html;charset=UTF-8,%3C%21doctypehtml%3E%3Chtml%20lang%3Den%3E%3Cmeta%2
 # 
 # [Black screen]
 ```
-data:text/html;charset=UTF-8,<title>%E2%80%8E<%2Ftitle><link%20href%3D"data%3Aimage%2Fgif%3Bbase64%2CR0lGODlhAQABAIAAAP%2F%2F%2FwAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D"rel%3Dicon%20type%3Dimage%2Fgif><style>body%7Bbackground-color%3A0%7D<%2Fstyle>
+data:text/html;charset=UTF-8,<title>%E2%80%8E<%2Ftitle><link%20href%3D"data%3Aimage%2Fgif%3Bbase64%2CR0lGODlhAQABAIAAAP%2F%2F%2FwAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D"rel%3Dicon%20type%3Dimage%2Fgif><style>body%7Bbackground-color%3A#000%7D<%2Fstyle>
 ```
 
 
