@@ -1,6 +1,7 @@
 # quick-paste-pages
 a collection of data:text/html pages to just paste into the address bar
-(Useful Html tags)[https://github.com/JamesFoltz/quick-paste-pages/blob/main/html_tags.md]
+
+[Useful Html tags](https://github.com/JamesFoltz/quick-paste-pages/blob/main/html_tags.md)
 
 # 
 # [REALLY get a message across]
