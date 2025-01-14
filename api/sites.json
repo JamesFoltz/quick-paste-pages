@@ -1,5 +1,8 @@
 {
   "sites": [
-    
+    {
+      "name":"Sand Simulation",
+      "url":"https://jamesfoltz.github.io/sand-sym/"
+    }
   ]
 }
