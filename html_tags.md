@@ -1,5 +1,5 @@
 #
-# [Invisible favicon]
+# [Invisible Tab]
 ```
-<link href="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" rel=icon type=image/gif>
+<title>%E2%80%8E</title><link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" rel="icon">
 ```
