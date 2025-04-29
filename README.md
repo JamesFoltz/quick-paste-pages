@@ -14,7 +14,7 @@ data:text/html;charset=UTF-8,%3Cstyle%3E%20body%7Bmargin%3A0%3Bpadding%3A0%3Bove
 # 
 # [Black screen]
 ```
-data:text/html;charset=UTF-8,<title>%E2%80%8E</title><link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" rel="icon"><body style="background-color:black;cursor:none;" onclick="document.body.requestFullscreen();"></body>
+data:text/html;charset=UTF-8,<title>%E2%80%8E</title><link href="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" rel="icon"><body style="background-color:black;cursor:none;" onclick="document.body.requestFullscreen();"></body>
 ```
 
 
@@ -38,17 +38,23 @@ data:text/html;charset=UTF-8,%3C!DOCTYPE%20html%3E%3Chtml%20lang%3D%22en%22%3E%3
 data:text/html;charset=UTF-8,%3Chead%3E%3Ctitle%3EPNG%20%E2%AE%95%20JPG%3C/title%3E%3C/head%3E%3Cbody%3E%3Ch1%3EPNG%20%E2%AE%95%20JPG%3C/h1%3E%3Cinput%20type=%22file%22%20id=%22fileInput%22%20accept=%22.png%22%20/%3E%3Cbutton%20onclick=%22convertToJPG()%22%3EConvert%3C/button%3E%3Cbr%3E%3Cdiv%20id=%22output%22%3E%3C/div%3E%3Cscript%3E%20function%20convertToJPG()%7Bconst%20fileInput%20=%20document.getElementById('fileInput');const%20file%20=%20fileInput.files%5B0%5D;const%20output%20=%20document.getElementById('output');if%20(file%20&&%20file.type%20===%20'image/png')%7Bconst%20reader%20=%20new%20FileReader();reader.onload%20=%20function(e)%7Bconst%20img%20=%20new%20Image();img.onload%20=%20function()%7Bconst%20canvas%20=%20document.createElement('canvas');canvas.width%20=%20img.width;canvas.height%20=%20img.height;const%20ctx%20=%20canvas.getContext('2d');ctx.drawImage(img,0,0);const%20jpgDataUrl%20=%20canvas.toDataURL('image/jpeg');const%20link%20=%20document.createElement('a');link.href%20=%20jpgDataUrl;link.download%20=%20file.name.replace('.png','.jpg');link.textContent%20=%20'Download%20JPG';output.innerHTML%20=%20'';output.appendChild(link)%7D;img.src%20=%20e.target.result%7D;reader.readAsDataURL(file)%7Delse%7Boutput.textContent%20=%20'Please%20select%20a%20valid%20PNG%20file.'%7D%7D%3C/script%3E%3C/body%3E
 ```
 
-
-# 
-# [Decompress And Render Quick-Paste-Page]
-```
-data:text/html;charset=UTF-8,%20%3Ctitle%3EData%20URI%20Code%20Extractor%20and%20Renderer%3C%2Ftitle%3E%3Cstyle%3E%20body%7Bfont-family%3AArial%2Csans-serif%3Bmax-width%3A800px%3Bmargin%3A0%20auto%3Bpadding%3A20px%7Dtextarea%7Bwidth%3A100%25%3Bheight%3A150px%3Bmargin-bottom%3A10px%7Dbutton%7Bpadding%3A10px%3Bbackground-color%3A%234CAF50%3Bcolor%3Awhite%3Bborder%3Anone%3Bcursor%3Apointer%3Bmargin-right%3A10px%7Dbutton%3Ahover%7Bbackground-color%3A%2345a049%7D%23output%2C%23renderFrame%7Bwidth%3A100%25%3Bheight%3A300px%3Bborder%3A1px%20solid%20%23ccc%3Bmargin-top%3A10px%7D%3C%2Fstyle%3E%3C%2Fhead%3E%3Cbody%3E%3Ch1%3EData%20URI%20Code%20Extractor%20and%20Renderer%3C%2Fh1%3E%3Ctextarea%20id%3D%22input%22%20placeholder%3D%22Paste%20your%20data%20URI%20here...%22%3E%3C%2Ftextarea%3E%3Cbutton%20onclick%3D%22extractFormatAndRender()%22%3EExtract%2CFormat%2Cand%20Render%3C%2Fbutton%3E%3Cbutton%20onclick%3D%22copyToClipboard()%22%3ECopy%20Formatted%20Code%3C%2Fbutton%3E%3Ch2%3EFormatted%20Code%3A%3C%2Fh2%3E%3Ctextarea%20id%3D%22output%22%20readonly%3E%3C%2Ftextarea%3E%3Ch2%3ERendered%20Output%3A%3C%2Fh2%3E%3Ciframe%20id%3D%22renderFrame%22%3E%3C%2Fiframe%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fjs-beautify%2F1.14.0%2Fbeautify-html.min.js%22%3E%3C%2Fscript%3E%3Cscript%3E%20function%20extractFormatAndRender()%7Bconst%20input%20%3D%20document.getElementById('input').value%3Bconst%20output%20%3D%20document.getElementById('output')%3Bconst%20renderFrame%20%3D%20document.getElementById('renderFrame')%3Blet%20extractedCode%20%3D%20''%3Btry%7Bconst%20htmlPart%20%3D%20input.split('%2C')%5B1%5D%3Bconst%20decodedHtml%20%3D%20decodeURIComponent(htmlPart)%3BextractedCode%20%3D%20html_beautify(decodedHtml%2C%7Bindent_size%3A2%7D)%3Boutput.value%20%3D%20extractedCode%3BrenderFrame.srcdoc%20%3D%20decodedHtml%7Dcatch%20(error)%7Boutput.value%20%3D%20'Error%3AUnable%20to%20extract%20and%20format%20the%20code.%20Please%20make%20sure%20you%20entered%20a%20valid%20data%20URI.'%3BrenderFrame.srcdoc%20%3D%20'%3Cp%3EError%3AUnable%20to%20render%20the%20content.%3C%2Fp%3E'%7D%7Dfunction%20copyToClipboard()%7Bconst%20output%20%3D%20document.getElementById('output')%3Boutput.select()%3Bdocument.execCommand('copy')%3Balert('Formatted%20code%20copied%20to%20clipboard!')%7D%3C%2Fscript%3E%3C%2Fbody%3E
-```
-
-
 #
 # [Random Number]
 - Default max is 2, set `?max=<MAX RANDOM NUMBER>` to choose a different max number.
 ```
 data:text/html;charset=UTF-8,%3Cbody%3E%3Cp%20id%3D%22out%22%3ENone%3C%2Fp%3E%3Cinput%20type%3D%22number%22%20name%3D%22max%22%20id%3D%22max-input%22%20style%3D%22width%3Afit-content%3B%22%3E%3Cbutton%20id%3D%22button%22%20onclick%3D%22generateNumber()%22%3ENew%20Number%3C%2Fbutton%3E%3C%2Fbody%3E%3Cscript%3E%20const%20queryString%20%3D%20window.location.search%3Bconst%20urlParams%20%3D%20new%20URLSearchParams(queryString)%3Bconst%20maxInput%20%3D%20document.getElementById(%22max-input%22)%3Blet%20max%20%3D%202%3BmaxInput.value%20%3D%20urlParams.get(%22max%22)%20%7C%7C%20max%3Bmax%20%3D%20Math.max(maxInput.value%2C2)%3BgenerateNumber()%3Bif%20(urlParams.get(%22close%22)%20%3D%3D%20%22close%22)%7Bwindow.close()%7Dfunction%20generateNumber()%7Bmax%20%3D%20Math.max(maxInput.value%2C2)%3BurlParams.set(%22max%22%2Cmax)%3Bvar%20rand%20%3D%20Math.round(Math.random()%20*%20Math.max(max%2C2))%3Bdocument.getElementById(%22out%22).innerText%20%3D%20rand%3BsetClipboard(rand)%7Dasync%20function%20setClipboard(text)%7Bconst%20type%20%3D%20%22text%2Fplain%22%3Bconst%20blob%20%3D%20new%20Blob(%5Btext%5D%2C%7Btype%7D)%3Bconst%20data%20%3D%20%5Bnew%20ClipboardItem(%7B%5Btype%5D%3Ablob%7D)%5D%3Bawait%20navigator.clipboard.write(data)%7D%3C%2Fscript%3E%3C%2Fhtml%3E%20
+```
+
+#
+# [Notepad]
+```
+data:text/html;charset=utf-8,<html><meta content%3D"width%3Ddevice-width%2Cinitial-scale%3D1" name%3D"viewport"><title>Notepad<%2Ftitle><link href%3D"data%3Aimage%2Fgif%3Bbase64%2CR0lGODlhAQABAIAAAP%2F%2F%2FwAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D" rel%3D"icon"><body style%3D"margin%3A0%3Bheight%3A100vh%3Bbackground%3A%23121212%3Bdisplay%3Aflex%3Balign-items%3Acenter%3Bjustify-content%3Acenter"><textarea id%3D"text" autofocus placeholder%3D"Start typing..." style%3D"width%3A100vw%3Bheight%3A100vh%3Bpadding%3A24px%3Bbackground%3A%231e1e1e%3Bcolor%3A%23fff%3Bborder%3Anone%3Bresize%3Anone%3Bfont-size%3A1rem%3Bline-height%3A1.5%3Bfont-family%3AArial%2Csans-serif%3Boutline%3A0%3Bbox-sizing%3Aborder-box"><%2Ftextarea><%2Fbody><%2Fhtml>
+```
+
+#
+# [Bookmark Bar Spacer]
+- runs `history.back()` when opened, nothing to display
+- REMOVE NAME ON BOOKMAR BAR
+```
+data:text/html;charset=UTF-8,<title>SPACER</title><link href="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" rel="icon"><body style="background-color:black;"></body><script>history.back()</script>
 ```
